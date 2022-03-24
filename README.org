@@ -17,7 +17,7 @@ Where ~[MAIN_DOC]~ is the main latex source file. The ~autocompile.sh~ script
 will run the follwing command
 
 #+begin_example
-ls *.tex | entr -s 'nix-shell latex.nix --run "rubber --pdf writing_energy.tex" ; rm -f *.aux *.bbl *.bcf *.blg *.log *.out *.run.xml *.toc'
+ls *.tex | entr -s 'nix-shell latex.nix --run "rubber --pdf [MAIN_DOC].tex" ; rm -f *.aux *.bbl *.bcf *.blg *.log *.out *.run.xml *.toc'
 #+end_example
 
 For the above command to work you will need Nix installed
