@@ -1,0 +1,28 @@
+#+TITLE: <<Name of the Latex Project>>
+#+AUTHOR: <<Name of the authors>>
+
+* Introduction
+
+Add some introduction about the content of the latex project
+
+* How to autocompile when latex document changes
+
+Just run the script in a command line
+
+#+begin_example
+sh ./autocompile.sh [MAIN_DOC].tex
+#+end_example
+
+Where ~[MAIN_DOC]~ is the main latex source file. The ~autocompile.sh~ script
+will run the follwing command
+
+#+begin_example
+ls *.tex | entr -s 'nix-shell latex.nix --run "rubber --pdf writing_energy.tex" ; rm -f *.aux *.bbl *.bcf *.blg *.log *.out *.run.xml *.toc'
+#+end_example
+
+For the above command to work you will need Nix installed
+[[https://nix.dev/tutorials/install-nix]]. With Nix it is more likely that the
+project will compile in the far future.
+
+You can remove the ~nix-shell latex.nix --run~ in the above command to run on an
+local installation of latex and rubber.
