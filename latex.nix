@@ -14,6 +14,7 @@ let
         texlive.combined.scheme-full
         rubber
         ninja
+        entr
       ];
     };
   };
